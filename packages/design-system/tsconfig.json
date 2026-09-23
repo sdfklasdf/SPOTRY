@@ -14,7 +14,7 @@
     "esModuleInterop": true,
     "jsx": "react-jsx",
     "rootDir": ".",
-    "paths": {"@spotry/*": ["src/*"]},
+    "paths": {"@spotry/*": ["./src/*"]},
     "types": []
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "tests/**/*.ts", "examples/**/*.tsx", "types/**/*.d.ts"],

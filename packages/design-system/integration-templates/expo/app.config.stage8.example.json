@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "SPOTRY",
+    "slug": "spotry",
+    "scheme": "spotry",
+    "icon": "./assets/generated/ios-icon-1024.png",
+    "ios": {
+      "supportsTablet": true,
+      "icon": "./assets/generated/ios-icon-1024.png"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/generated/android-adaptive-foreground.png",
+        "monochromeImage": "./assets/generated/android-adaptive-monochrome.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#FFFFFF",
+          "image": "./assets/generated/splash-icon.png",
+          "imageWidth": 180
+        }
+      ]
+    ]
+  }
+}

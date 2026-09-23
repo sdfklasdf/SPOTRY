@@ -1,0 +1,4 @@
+import { Pressable, Text, StyleSheet } from 'react-native';
+import { colors, radius, spacing, typography } from '../tokens/index.js';
+export function SportPersonalityCard({sportName,personality,onPress}:{sportName:string;personality:string;onPress?:()=>void}){return <Pressable accessibilityRole="button" onPress={onPress} style={styles.card}><Text style={styles.name}>{sportName}</Text><Text style={styles.copy}>{personality}</Text></Pressable>}
+const styles=StyleSheet.create({card:{minHeight:112,borderRadius:radius.lg,borderWidth:1,borderColor:colors.line[200],backgroundColor:colors.canvas,padding:spacing[4],justifyContent:'flex-end',gap:spacing[1]},name:{fontFamily:typography.family.sans,fontSize:typography.size.lg,fontWeight:typography.weight.bold,color:colors.ink[950]},copy:{fontFamily:typography.family.sans,fontSize:typography.size.sm,color:colors.ink[600]}});

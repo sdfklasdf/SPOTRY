@@ -1,0 +1,5 @@
+import { Image, Text, View, StyleSheet } from 'react-native';
+import type { ImageLoadState } from '../contracts/image.js';
+import { colors, radius, spacing, typography } from '../tokens/index.js';
+export function ImageWithFallback({sourceUri,state,alt}:{sourceUri?:string;state:ImageLoadState;alt:string}){if(state==='error'||!sourceUri)return <View accessibilityLabel={`${alt} 이미지 없음`} style={styles.fallback}><Text style={styles.copy}>이미지를 불러오지 못했어요</Text></View>;return <View style={styles.frame}>{state==='loading'?<View accessibilityLabel="이미지 불러오는 중" style={styles.loading}/>:null}<Image accessibilityLabel={alt} source={{uri:sourceUri}} style={styles.image}/></View>}
+const styles=StyleSheet.create({frame:{aspectRatio:4/3,borderRadius:radius.lg,overflow:'hidden',backgroundColor:colors.soft},image:{width:'100%',height:'100%'},loading:{position:'absolute',width:'100%',height:'100%',backgroundColor:colors.line[200]},fallback:{aspectRatio:4/3,borderRadius:radius.lg,backgroundColor:colors.soft,alignItems:'center',justifyContent:'center',padding:spacing[4]},copy:{fontFamily:typography.family.sans,fontSize:typography.size.sm,color:colors.ink[600]}});

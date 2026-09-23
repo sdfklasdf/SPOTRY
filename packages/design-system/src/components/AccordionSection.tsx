@@ -1,0 +1,5 @@
+import { Pressable, Text, View, StyleSheet } from 'react-native';
+import type { ReactNode } from 'react';
+import { colors, spacing, typography } from '../tokens/index.js';
+export function AccordionSection({title,expanded,onToggle,children}:{title:string;expanded:boolean;onToggle?:()=>void;children?:ReactNode}){return <View style={styles.root}><Pressable accessibilityRole="button" accessibilityState={{expanded}} onPress={onToggle} style={styles.header}><Text style={styles.title}>{title}</Text><Text style={styles.indicator}>{expanded?'접기':'보기'}</Text></Pressable>{expanded?<View style={styles.body}>{children}</View>:null}</View>}
+const styles=StyleSheet.create({root:{borderBottomWidth:1,borderBottomColor:colors.line[200]},header:{minHeight:52,flexDirection:'row',alignItems:'center',justifyContent:'space-between'},title:{fontFamily:typography.family.sans,fontSize:typography.size.md,fontWeight:typography.weight.bold,color:colors.ink[950]},indicator:{fontFamily:typography.family.sans,fontSize:typography.size.sm,color:colors.ink[600]},body:{paddingBottom:spacing[4]}});

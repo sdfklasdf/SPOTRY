@@ -1,0 +1,18 @@
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { router } from 'expo-router';
+import { AvailabilityBadge, CoachTrustBlock, PrimaryButton, PriceBlock, SecondaryButton, colors, radius, spacing, typography } from '@spotry/design-system';
+
+const HERO_IMAGE = require('../../assets/home-hero-editorial.jpg');
+const availability = {status:'few_seats' as const, remainingSeats:1};
+const price = {cashPriceKrw:29000,membershipCreditEnabled:true,creditCost:7};
+export default function ExperienceDetailScreen(){return <ScrollView contentInsetAdjustmentBehavior="automatic" contentContainerStyle={styles.content}>
+  <Image source={HERO_IMAGE} style={styles.hero} resizeMode="cover" accessibilityLabel="초보 스포츠 체험의 실제 움직임을 보여주는 에디토리얼 이미지"/>
+  <View style={styles.stack}><View style={styles.topline}><Text allowFontScaling style={styles.sport}>클라이밍</Text><AvailabilityBadge availability={availability}/></View><Text allowFontScaling style={styles.title}>완전 초보 볼더링 체험</Text><Text allowFontScaling style={styles.lead}>낙법과 기본 움직임부터 시작해요. 처음 혼자 와도 따라갈 수 있게 진행합니다.</Text></View>
+  <View style={styles.info}><Text style={styles.infoTitle}>일 14:00 · 90분</Text><Text style={styles.infoCopy}>합정 클라이밍짐 · 선택 지역 기준 1.9km</Text><Text style={styles.infoCopy}>최대 6명 · 혼자 참여 가능 · 암벽화 대여 포함</Text></View>
+  <PriceBlock price={price}/>
+  <View style={styles.section}><Text style={styles.sectionTitle}>처음이어도 괜찮은 이유</Text><Text style={styles.body}>처음 20분은 안전한 낙법과 기본 자세를 익히고, 이후 쉬운 문제부터 직접 시도합니다. 어려운 동작을 억지로 따라가지 않아도 됩니다.</Text></View>
+  <View style={styles.section}><CoachTrustBlock items={[{label:'본인 확인',value:'김스포 강사',verified:true},{label:'공식 자격',value:'자격 증빙 확인',verified:true},{label:'지도 경력',value:'입문 지도 경력 증빙 확인',verified:true}]}/></View>
+  <View style={styles.section}><Text style={styles.sectionTitle}>예약 전 확인</Text><Text style={styles.body}>잔여석과 취소 반환 조건은 예약 시점의 서버 기준으로 다시 확인합니다. 표시된 거리는 위치 권한 또는 선택 지역 기준입니다.</Text></View>
+  <PrimaryButton label="예약 조건 확인하기" onPress={()=>{}}/><SecondaryButton label="탐색으로 돌아가기" onPress={()=>router.back()}/>
+</ScrollView>}
+const styles=StyleSheet.create({content:{paddingBottom:spacing[8],backgroundColor:colors.canvas,gap:spacing[5]},hero:{width:'100%',aspectRatio:4/3,backgroundColor:colors.soft},stack:{paddingHorizontal:spacing[5],gap:spacing[2]},topline:{flexDirection:'row',alignItems:'flex-start',justifyContent:'space-between',gap:spacing[2],flexWrap:'wrap'},sport:{fontFamily:typography.family.sans,fontSize:typography.size.sm,lineHeight:typography.lineHeight.sm,fontWeight:typography.weight.bold,color:colors.ink[800]},title:{fontFamily:typography.family.sans,fontSize:typography.size.xxl,lineHeight:typography.lineHeight.xxl,fontWeight:typography.weight.bold,color:colors.ink[950]},lead:{fontFamily:typography.family.sans,fontSize:typography.size.md,lineHeight:typography.lineHeight.md,color:colors.ink[600]},info:{marginHorizontal:spacing[5],padding:spacing[4],borderRadius:radius.lg,backgroundColor:colors.soft,gap:spacing[1]},infoTitle:{fontFamily:typography.family.sans,fontSize:typography.size.md,lineHeight:typography.lineHeight.md,fontWeight:typography.weight.semibold,color:colors.ink[950]},infoCopy:{fontFamily:typography.family.sans,fontSize:typography.size.sm,lineHeight:typography.lineHeight.sm,color:colors.ink[600]},section:{paddingHorizontal:spacing[5],gap:spacing[2]},sectionTitle:{fontFamily:typography.family.sans,fontSize:typography.size.lg,lineHeight:typography.lineHeight.lg,fontWeight:typography.weight.bold,color:colors.ink[950]},body:{fontFamily:typography.family.sans,fontSize:typography.size.sm,lineHeight:typography.lineHeight.sm,color:colors.ink[600]}});

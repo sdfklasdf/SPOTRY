@@ -1,0 +1,25 @@
+{
+  "name": "@spotry/design-system",
+  "version": "0.2.0-stage8",
+  "private": true,
+  "description": "SPOTRY Stage 8 production design system v0.2 for Expo SDK 57 / React Native 0.86",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "node scripts/lint.mjs",
+    "build": "tsc -p tsconfig.build.json",
+    "test": "npm run build && node --test dist/tests/*.test.js",
+    "verify": "npm run typecheck && npm run lint && npm run assets && npm run test",
+    "assets": "node scripts/validate-assets.mjs"
+  },
+  "peerDependencies": {
+    "react": ">=19.2.3",
+    "react-native": ">=0.86.0"
+  },
+  "devDependencies": {
+    "typescript": ">=5.8.3"
+  },
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "react-native": "src/index.ts"
+}

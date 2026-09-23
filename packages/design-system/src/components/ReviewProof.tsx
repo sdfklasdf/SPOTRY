@@ -1,0 +1,4 @@
+import { Text, View, StyleSheet } from 'react-native';
+import { colors, spacing, typography } from '../tokens/index.js';
+export function ReviewProof({rating,reviewCount,recentLabel}:{rating:number;reviewCount:number;recentLabel?:string}){if(rating<0||rating>5||reviewCount<0)throw new Error('Invalid review proof');return <View style={styles.row}><Text style={styles.rating}>{rating.toFixed(1)}</Text><Text style={styles.meta}>후기 {reviewCount}개{recentLabel?` · ${recentLabel}`:''}</Text></View>}
+const styles=StyleSheet.create({row:{flexDirection:'row',alignItems:'center',gap:spacing[2]},rating:{fontFamily:typography.family.sans,fontSize:typography.size.md,fontWeight:typography.weight.bold,color:colors.ink[950]},meta:{fontFamily:typography.family.sans,fontSize:typography.size.sm,color:colors.ink[600]}});

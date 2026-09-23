@@ -1,0 +1,6 @@
+import { Text, View, StyleSheet } from 'react-native';
+import type { ExperiencePrice } from '../domain/types.js';
+import { getPaymentOptions } from '../contracts/checkout.js';
+import { colors, radius, spacing, typography } from '../tokens/index.js';
+export function AlternatePaymentMethods({price,partialCreditCashKrw,expanded}:{price:ExperiencePrice;partialCreditCashKrw?:number;expanded:boolean}){const opts=getPaymentOptions(price,partialCreditCashKrw);return <View style={styles.root}><Text style={styles.title}>다른 결제 방법 {expanded?'접기':'보기'}</Text>{expanded?opts.filter(x=>x.mode!=='cash_card').map(x=><View key={x.mode} style={styles.option}><Text style={styles.optionTitle}>{x.title}</Text><Text style={styles.detail}>{x.detail}</Text></View>):null}</View>}
+const styles=StyleSheet.create({root:{gap:spacing[2]},title:{fontFamily:typography.family.sans,fontSize:typography.size.sm,fontWeight:typography.weight.semibold,color:colors.ink[800]},option:{borderWidth:1,borderColor:colors.line[200],borderRadius:radius.md,padding:spacing[3],gap:spacing[1]},optionTitle:{fontFamily:typography.family.sans,fontSize:typography.size.sm,fontWeight:typography.weight.bold,color:colors.ink[950]},detail:{fontFamily:typography.family.sans,fontSize:typography.size.xs,color:colors.ink[600]}});

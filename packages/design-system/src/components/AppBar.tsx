@@ -1,0 +1,4 @@
+import { Text, View, Pressable, StyleSheet } from 'react-native';
+import { colors, spacing, typography } from '../tokens/index.js';
+export function AppBar({title,onBack}:{title:string;onBack?:()=>void}){return <View style={styles.root}>{onBack?<Pressable accessibilityRole="button" accessibilityLabel="뒤로" onPress={onBack} style={styles.back}><Text style={styles.backText}>‹</Text></Pressable>:<View style={styles.back}/>}<Text numberOfLines={1} style={styles.title}>{title}</Text><View style={styles.back}/></View>}
+const styles=StyleSheet.create({root:{minHeight:56,flexDirection:'row',alignItems:'center',justifyContent:'space-between',paddingHorizontal:spacing[3],backgroundColor:colors.canvas},back:{width:44,height:44,alignItems:'center',justifyContent:'center'},backText:{fontSize:32,color:colors.ink[950]},title:{flex:1,textAlign:'center',fontFamily:typography.family.sans,fontSize:typography.size.md,fontWeight:typography.weight.bold,color:colors.ink[950]}});

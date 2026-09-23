@@ -1,0 +1,4 @@
+import { Pressable, Text, StyleSheet } from 'react-native';
+import { colors, radius, spacing, typography } from '../tokens/index.js';
+export function MysteryConstraintChip({label,active,onPress}:{label:string;active:boolean;onPress?:()=>void}){return <Pressable accessibilityRole="checkbox" accessibilityState={{checked:active}} onPress={onPress} style={[styles.base,active&&styles.active]}><Text style={styles.text}>{label}</Text></Pressable>}
+const styles=StyleSheet.create({base:{minHeight:44,paddingHorizontal:spacing[4],borderRadius:radius.pill,borderWidth:1,borderColor:colors.line[200],justifyContent:'center'},active:{backgroundColor:colors.action[100],borderColor:colors.action[600]},text:{fontFamily:typography.family.sans,fontSize:typography.size.sm,fontWeight:typography.weight.semibold,color:colors.ink[800]}});

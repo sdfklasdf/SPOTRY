@@ -1,0 +1,186 @@
+
+> @spotry/design-system@0.2.0-stage8 verify
+> npm run typecheck && npm run lint && npm run assets && npm run test
+
+
+> @spotry/design-system@0.2.0-stage8 typecheck
+> tsc -p tsconfig.json --noEmit
+
+
+> @spotry/design-system@0.2.0-stage8 lint
+> node scripts/lint.mjs
+
+lint PASS (59 TypeScript files checked)
+
+> @spotry/design-system@0.2.0-stage8 assets
+> node scripts/validate-assets.mjs
+
+asset/config validation PASS
+
+> @spotry/design-system@0.2.0-stage8 test
+> npm run build && node --test dist/tests/*.test.js
+
+
+> @spotry/design-system@0.2.0-stage8 build
+> tsc -p tsconfig.build.json
+
+TAP version 13
+# Subtest: few seats exposes actual remaining seats
+ok 1 - few seats exposes actual remaining seats
+  ---
+  duration_ms: 1.13217
+  type: 'test'
+  ...
+# Subtest: few seats without count fails instead of inventing scarcity
+ok 2 - few seats without count fails instead of inventing scarcity
+  ---
+  duration_ms: 0.313613
+  type: 'test'
+  ...
+# Subtest: KRW stays primary and credit is membership entitlement
+ok 3 - KRW stays primary and credit is membership entitlement
+  ---
+  duration_ms: 16.112287
+  type: 'test'
+  ...
+# Subtest: cash checkout exposes exact amount
+ok 4 - cash checkout exposes exact amount
+  ---
+  duration_ms: 0.186622
+  type: 'test'
+  ...
+# Subtest: one record never claims stable pattern
+ok 5 - one record never claims stable pattern
+  ---
+  duration_ms: 0.260463
+  type: 'test'
+  ...
+# Subtest: 3 records unlock pattern-ready state
+ok 6 - 3 records unlock pattern-ready state
+  ---
+  duration_ms: 0.160322
+  type: 'test'
+  ...
+# Subtest: recommendation requires 2 personal + 1 practical evidence
+ok 7 - recommendation requires 2 personal + 1 practical evidence
+  ---
+  duration_ms: 0.260444
+  type: 'test'
+  ...
+# Subtest: sold out session cannot be Next Try CTA target
+ok 8 - sold out session cannot be Next Try CTA target
+  ---
+  duration_ms: 0.105049
+  type: 'test'
+  ...
+# Subtest: alternate payment keeps cash card as default first option
+ok 9 - alternate payment keeps cash card as default first option
+  ---
+  duration_ms: 0.352612
+  type: 'test'
+  ...
+# Subtest: reflection requires only three core metrics in valid range
+ok 10 - reflection requires only three core metrics in valid range
+  ---
+  duration_ms: 0.416709
+  type: 'test'
+  ...
+# Subtest: Kang Minje 90m minimum instructor payout is 30,000 KRW
+ok 11 - Kang Minje 90m minimum instructor payout is 30,000 KRW
+  ---
+  duration_ms: 0.867841
+  type: 'test'
+  ...
+# Subtest: single-session cash floor for 30k payout at 12% margin is about 35.4k total
+ok 12 - single-session cash floor for 30k payout at 12% margin is about 35.4k total
+  ---
+  duration_ms: 0.209607
+  type: 'test'
+  ...
+# Subtest: two-seat full-capacity floor is about 17.7k per person
+ok 13 - two-seat full-capacity floor is about 17.7k per person
+  ---
+  duration_ms: 0.15231
+  type: 'test'
+  ...
+# Subtest: legacy compare deep link redirects into Record compare
+ok 14 - legacy compare deep link redirects into Record compare
+  ---
+  duration_ms: 0.966119
+  type: 'test'
+  ...
+# Subtest: distance is only shown from precise location context
+ok 15 - distance is only shown from precise location context
+  ---
+  duration_ms: 0.207774
+  type: 'test'
+  ...
+# Subtest: reduced motion removes animation duration but preserves semantic haptic
+ok 16 - reduced motion removes animation duration but preserves semantic haptic
+  ---
+  duration_ms: 0.978708
+  type: 'test'
+  ...
+# Subtest: real provider contexts never substitute editorial imagery as documentary proof
+ok 17 - real provider contexts never substitute editorial imagery as documentary proof
+  ---
+  duration_ms: 0.188575
+  type: 'test'
+  ...
+# Subtest: confirmed booking exposes only available aftercare actions
+ok 18 - confirmed booking exposes only available aftercare actions
+  ---
+  duration_ms: 0.193252
+  type: 'test'
+  ...
+# Subtest: completed booking has no pre-session aftercare actions
+ok 19 - completed booking has no pre-session aftercare actions
+  ---
+  duration_ms: 0.098579
+  type: 'test'
+  ...
+# Subtest: web token adapter emits locked Action Green and Pretendard variables
+ok 20 - web token adapter emits locked Action Green and Pretendard variables
+  ---
+  duration_ms: 0.121954
+  type: 'test'
+  ...
+# Subtest: haptic adapter is not called for none intent
+ok 21 - haptic adapter is not called for none intent
+  ---
+  duration_ms: 0.113191
+  type: 'test'
+  ...
+# Subtest: Kang Minje one-person 90m session floor remains about 35.4k before venue costs
+ok 22 - Kang Minje one-person 90m session floor remains about 35.4k before venue costs
+  ---
+  duration_ms: 0.332171
+  type: 'test'
+  ...
+# Subtest: Kang Minje two-seat session lowers the mathematical floor per person
+ok 23 - Kang Minje two-seat session lowers the mathematical floor per person
+  ---
+  duration_ms: 0.335066
+  type: 'test'
+  ...
+# Subtest: venue cost flows directly into the cash floor instead of being ignored
+ok 24 - venue cost flows directly into the cash floor instead of being ignored
+  ---
+  duration_ms: 0.146882
+  type: 'test'
+  ...
+# Subtest: 35k one-person cash booking is below 12 percent target before venue cost
+ok 25 - 35k one-person cash booking is below 12 percent target before venue cost
+  ---
+  duration_ms: 0.114883
+  type: 'test'
+  ...
+1..25
+# tests 25
+# suites 0
+# pass 25
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 90.88552

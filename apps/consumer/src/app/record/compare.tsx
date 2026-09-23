@@ -1,0 +1,4 @@
+import { ScrollView, StyleSheet, Text } from 'react-native';
+import { CompareMetricRow, colors, spacing, typography } from '@spotry/design-system';
+export default function CompareScreen(){return <ScrollView contentInsetAdjustmentBehavior="automatic" contentContainerStyle={styles.content}><Text style={styles.title}>내 기록 기준</Text><Text style={styles.copy}>SPOTRY 점수가 아니라 체험 후 직접 남긴 기록이에요.</Text><CompareMetricRow label="재미" leftLabel="수영" leftValue={4.3} rightLabel="클라이밍" rightValue={4.8}/><CompareMetricRow label="다시 하고 싶은 정도" leftLabel="수영" leftValue={4.5} rightLabel="클라이밍" rightValue={4.2}/></ScrollView>}
+const styles=StyleSheet.create({content:{padding:spacing[5],gap:spacing[4],backgroundColor:colors.canvas},title:{fontFamily:typography.family.sans,fontSize:typography.size.xxl,fontWeight:typography.weight.bold,color:colors.ink[950]},copy:{fontFamily:typography.family.sans,color:colors.ink[600]}});

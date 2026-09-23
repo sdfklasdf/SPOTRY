@@ -1,0 +1,23 @@
+{
+  "name": "spotry",
+  "version": "0.3.0-stage8",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "npm --workspace @spotry/consumer run start",
+    "android": "npm --workspace @spotry/consumer run android",
+    "ios": "npm --workspace @spotry/consumer run ios",
+    "web": "npm --workspace @spotry/consumer run web",
+    "typecheck": "npm --workspace @spotry/design-system run typecheck && npm --workspace @spotry/consumer run typecheck",
+    "lint": "npm --workspace @spotry/design-system run lint",
+    "test": "npm --workspace @spotry/design-system run test",
+    "verify:design-system": "npm --workspace @spotry/design-system run verify",
+    "verify": "npm run typecheck && npm run lint && npm run test"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}

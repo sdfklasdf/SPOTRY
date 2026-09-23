@@ -1,0 +1,21 @@
+name: stage8-ci
+on:
+  push:
+    branches: [main, "stage8/**"]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.16.0
+          cache: npm
+      - run: npm install
+      - run: npx expo install --fix
+        working-directory: apps/consumer
+      - run: npm run verify:design-system
+      - run: npm run typecheck

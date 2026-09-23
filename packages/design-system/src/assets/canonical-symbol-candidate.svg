@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 176 250" role="img" aria-label="SPOTRY symbol">
+<defs>
+ <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#78F84A"/><stop offset="0.58" stop-color="#49D82D"/><stop offset="1" stop-color="#16A83B"/></linearGradient>
+ <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#60F13D"/><stop offset="0.55" stop-color="#25C83D"/><stop offset="1" stop-color="#0E9C3F"/></linearGradient>
+</defs>
+<path d="M 175 1 L 170 0 L 68 37 L 49 46 L 31 61 L 23 71 L 17 84 L 12 105 L 13 139 L 17 149 L 28 161 L 34 164 L 38 164 L 87 108 L 107 97 L 124 81 L 172 12 L 175 6 Z" fill="url(#g1)"/>
+<path d="M 159 118 L 143 107 L 130 103 L 124 103 L 83 150 L 52 180 L 4 237 L 0 243 L 0 247 L 2 249 L 18 248 L 93 234 L 122 225 L 126 225 L 142 217 L 150 211 L 159 202 L 170 183 L 174 168 L 174 150 L 172 141 L 166 127 Z" fill="url(#g2)"/>
+</svg>

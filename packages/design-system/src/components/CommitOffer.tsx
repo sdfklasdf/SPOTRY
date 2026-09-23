@@ -1,0 +1,5 @@
+import { Text, View, StyleSheet } from 'react-native';
+import { SecondaryButton } from './Buttons.js';
+import { colors, radius, spacing, typography } from '../tokens/index.js';
+export function CommitOffer({title,copy,cta,onPress}:{title:string;copy:string;cta:string;onPress?:()=>void}){return <View style={styles.root}><Text style={styles.eyebrow}>계속 해보고 싶다면</Text><Text style={styles.title}>{title}</Text><Text style={styles.copy}>{copy}</Text><SecondaryButton label={cta} {...(onPress ? { onPress } : {})}/></View>}
+const styles=StyleSheet.create({root:{gap:spacing[2],padding:spacing[4],borderWidth:1,borderColor:colors.line[200],borderRadius:radius.lg,backgroundColor:colors.canvas},eyebrow:{fontFamily:typography.family.sans,fontSize:typography.size.xs,fontWeight:typography.weight.semibold,color:colors.ink[600]},title:{fontFamily:typography.family.sans,fontSize:typography.size.lg,fontWeight:typography.weight.bold,color:colors.ink[950]},copy:{fontFamily:typography.family.sans,fontSize:typography.size.sm,color:colors.ink[600]}});
